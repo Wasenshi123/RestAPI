@@ -151,7 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CreditCardValidationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,6 +176,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{047a6ae7-6892-4864-9b1b-2cf87f0769f0}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{ea2f0e48-3610-46ae-a179-0af9e4ccd417}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Libs\Libs.csproj">
       <Project>{b79fd0b0-aae3-4bea-acfa-ee259652569f}</Project>
       <Name>Libs</Name>

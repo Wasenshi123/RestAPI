@@ -1,12 +1,8 @@
-﻿using DAL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Wasenshi.CreditCard.DAL.Interfaces;
 
-namespace DAL
+namespace Wasenshi.CreditCard.DAL
 {
     public class CreditCardDal : ICreditCardDal
     {

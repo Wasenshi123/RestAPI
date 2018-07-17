@@ -1,6 +1,7 @@
-namespace DAL
+namespace Wasenshi.CreditCard.DAL
 {
     using System.Data.Entity;
+    using Wasenshi.CreditCard.DAL.Models;
 
     public partial class CreditCardContext : DbContext
     {

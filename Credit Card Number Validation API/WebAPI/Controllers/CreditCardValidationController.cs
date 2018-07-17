@@ -1,14 +1,26 @@
 ﻿using System.Web.Http;
+using Wasenshi.CreditCard.BLL.Interfaces;
+using Wasenshi.CreditCard.Libs.Models;
 
 namespace WebAPI.Controllers
 {
-    [RoutePrefix("CreditCardApi")]
+    [RoutePrefix("CreditCard")]
     public class CreditCardValidationController : ApiController
     {
-        public IHttpActionResult Index()
+        private ICreditCardBll _creditCardBll;
+
+        public CreditCardValidationController(ICreditCardBll creditCardBll)
+        {
+            _creditCardBll = creditCardBll;
+        }
+
+        [Route("Validate")]
+        [HttpPost]
+        public IHttpActionResult ValidateCard(Card card)
         {
 
-            return this.Ok();
+
+            return Ok(new ValidateResult());
         }
     }
 }

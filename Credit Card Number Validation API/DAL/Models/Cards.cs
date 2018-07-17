@@ -1,4 +1,4 @@
-namespace DAL
+namespace Wasenshi.CreditCard.DAL.Models
 {
     using System.ComponentModel.DataAnnotations;
 
