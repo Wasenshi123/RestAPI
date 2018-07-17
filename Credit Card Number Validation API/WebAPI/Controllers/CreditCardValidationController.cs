@@ -2,6 +2,7 @@
 
 namespace WebAPI.Controllers
 {
+    [RoutePrefix("CreditCardApi")]
     public class CreditCardValidationController : ApiController
     {
         public IHttpActionResult Index()

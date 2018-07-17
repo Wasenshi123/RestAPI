@@ -6,7 +6,7 @@ using WebAPI.Controllers;
 namespace WebAPI.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerTest
+    public class CreditCardVAlidationControllerTest
     {
         [TestMethod]
         public void Index()
