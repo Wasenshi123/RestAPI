@@ -5,6 +5,7 @@ namespace Wasenshi.CreditCard.BLL.Validation
 {
     public abstract class ValidatorUnit
     {
+        public int CardDigit { get; protected set; } = 16;
 
         public bool Validate(Card card)
         {
@@ -27,7 +28,12 @@ namespace Wasenshi.CreditCard.BLL.Validation
 
         protected virtual bool ValidateCard(Card card)
         {
-            return true;
+            return ValidateCardDigit(card);
+        }
+
+        protected bool ValidateCardDigit(Card card)
+        {
+            return card.Number.Length == CardDigit;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Wasenshi.CreditCard.BLL.Validation.ValidatorUnits
             {
                 return false;
             }
-            return true;
+            return base.ValidateCard(card);
         }
     }
 }
