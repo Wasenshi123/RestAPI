@@ -7,8 +7,8 @@
     <ProjectGuid>{047A6AE7-6892-4864-9B1B-2CF87F0769F0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wasenshi.CreditCard</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>Wasenshi.CreditCard.BLL</RootNamespace>
+    <AssemblyName>Wasenshi.CreditCard.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

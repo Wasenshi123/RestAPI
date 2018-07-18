@@ -7,8 +7,8 @@
     <ProjectGuid>{EA2F0E48-3610-46AE-A179-0AF9E4CCD417}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wasenshi.CreditCard</RootNamespace>
-    <AssemblyName>DAL</AssemblyName>
+    <RootNamespace>Wasenshi.CreditCard.DAL</RootNamespace>
+    <AssemblyName>Wasenshi.CreditCard.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
