@@ -38,6 +38,20 @@ namespace Bll.Tests
         }
 
         [Test]
+        public void Does_Not_Exist_CardNumber()
+        {
+            _repo.Setup(c => c.CheckCardNumberExist(It.IsAny<string>()))
+                .Returns(false);
+            _card.Number = "4123456789012345";
+
+
+            var result = _bll.ValidateCreditCard(_card);
+
+            Assert.AreEqual(CardTypeEnum.Visa, result.CardType);
+            Assert.AreEqual(ResultType.DoesNotExist, result.Result);
+        }
+
+        [Test]
         public void ValidVisa()
         {
             // Define a leap year (multiple of 4, but not 100, or multiple of 400)
