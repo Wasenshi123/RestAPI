@@ -18,24 +18,42 @@ namespace Wasenshi.CreditCard.BLL
         {
             if (!IsDigitsOnly(card.Number))
             {
-                return new ValidateResult
+                return ValidateResult.New(ResultType.Invalid, CardTypeEnum.Unknown);
+            }
+
+            ResultType result = ResultType.Invalid;
+            CardTypeEnum cardType = CardTypeEnum.Unknown;
+            if (card.Number.StartsWith("4"))
+            {
+                // Visa Card
+                cardType = CardTypeEnum.Visa;
+            }
+            else if (card.Number.StartsWith("5"))
+            {
+                // Master Card
+                cardType = CardTypeEnum.Master;;
+            }
+            else if (card.Number.StartsWith("3"))
+            {
+                if (card.Number.Length == 15)
                 {
-                    Result = ResultType.Invalid,
-                    CardType = CardTypeEnum.Unknown
-                };
+                    // Amex Card
+                    cardType = CardTypeEnum.Amex;
+                }
+                else
+                {
+                    // JCB
+                    cardType = CardTypeEnum.JCB;
+                }
             }
 
             bool exist = _repository.CheckCardNumberExist(card.Number);
             if (!exist)
             {
-                return new ValidateResult
-                {
-                    Result = ResultType.DoesNotExist,
-                    CardType = CardTypeEnum.Unknown
-                };
+                result = ResultType.DoesNotExist;
             }
-            
 
+            return ValidateResult.New(result, cardType);
         }
 
         static bool IsDigitsOnly(string str)
