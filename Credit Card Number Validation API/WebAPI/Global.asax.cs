@@ -15,12 +15,16 @@ namespace WebAPI
             {
                 WebApiConfig.Register(config);
                 FilterConfig.Register(config.Filters);
+                //Serialize Enum as String in JSON
+                config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(
+                    new StringEnumConverter {CamelCaseText = false});
                 JsonConvert.DefaultSettings = () =>
                 {
                     var settings = new JsonSerializerSettings();
-                    settings.Converters.Add(new StringEnumConverter { CamelCaseText = true });
+                    settings.Converters.Add(new StringEnumConverter { CamelCaseText = false });
                     return settings;
                 };
+                
             });
         }
     }

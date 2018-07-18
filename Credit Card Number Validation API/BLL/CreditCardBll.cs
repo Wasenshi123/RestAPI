@@ -1,12 +1,13 @@
 ﻿using Wasenshi.CreditCard.BLL.Interfaces;
 using Wasenshi.CreditCard.DAL.Interfaces;
+using Wasenshi.CreditCard.Libs.Enums;
 using Wasenshi.CreditCard.Libs.Models;
 
 namespace Wasenshi.CreditCard.BLL
 {
     public class CreditCardBll : ICreditCardBll
     {
-        private ICreditCardRepository _repository;
+        private readonly ICreditCardRepository _repository;
 
         public CreditCardBll(ICreditCardRepository creditCardRepository)
         {
@@ -15,8 +16,12 @@ namespace Wasenshi.CreditCard.BLL
 
         public ValidateResult ValidateCreditCard(Card card)
         {
-
-            return new ValidateResult();
+            var exist = _repository.CheckCardNumberExist(card.Number);
+            return new ValidateResult
+            {
+                Result = exist?ResultType.Valid : ResultType.DoesNotExist,
+                CardType = CardTypeEnum.Master
+            };
         }
     }
 }

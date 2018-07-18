@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -84,7 +85,7 @@ namespace Wasenshi.CreditCard.WebAPI
         {
             // Logs before running action.
             WindsorConfig.Container.Resolve<ILogger>().LogDebug(
-                $"action '{actionContext.ActionDescriptor.ActionName}' of controller '{actionContext.ActionDescriptor.ControllerDescriptor.ControllerName}' has been called.");
+                $"The action [{actionContext.ActionDescriptor.ActionName}] of controller [{actionContext.ActionDescriptor.ControllerDescriptor.ControllerName}] has been called.");
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Wasenshi.CreditCard.WebAPI
         {
             // Logs after finished action.
             WindsorConfig.Container.Resolve<ILogger>().LogDebug(
-                $"action '{actionExecutedContext.ActionContext.ActionDescriptor.ActionName}' of controller '{actionExecutedContext.ActionContext.ActionDescriptor.ControllerDescriptor.ControllerName}' has been called.");
+                $"The action [{actionExecutedContext.ActionContext.ActionDescriptor.ActionName}] of controller [{actionExecutedContext.ActionContext.ActionDescriptor.ControllerDescriptor.ControllerName}] has completed.");
         }
     }
 }

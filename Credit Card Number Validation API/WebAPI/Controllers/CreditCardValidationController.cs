@@ -1,5 +1,7 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Results;
 using Wasenshi.CreditCard.BLL.Interfaces;
+using Wasenshi.CreditCard.Libs.Enums;
 using Wasenshi.CreditCard.Libs.Models;
 
 namespace Wasenshi.CreditCard.WebAPI.Controllers
@@ -7,7 +9,7 @@ namespace Wasenshi.CreditCard.WebAPI.Controllers
     [RoutePrefix("CreditCard")]
     public class CreditCardValidationController : ApiController
     {
-        private ICreditCardBll _creditCardBll;
+        private readonly ICreditCardBll _creditCardBll;
 
         public CreditCardValidationController(ICreditCardBll creditCardBll)
         {
@@ -19,8 +21,9 @@ namespace Wasenshi.CreditCard.WebAPI.Controllers
         public IHttpActionResult ValidateCard(Card card)
         {
 
+            var result = _creditCardBll.ValidateCreditCard(card);
 
-            return Ok(new ValidateResult());
+            return Ok(result);
         }
     }
 }

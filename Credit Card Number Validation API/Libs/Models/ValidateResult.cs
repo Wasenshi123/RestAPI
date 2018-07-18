@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Wasenshi.CreditCard.Libs.Enums;
 
 namespace Wasenshi.CreditCard.Libs.Models
