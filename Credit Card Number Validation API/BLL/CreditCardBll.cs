@@ -22,19 +22,19 @@ namespace Wasenshi.CreditCard.BLL
                 return ValidateResult.New(ResultType.Invalid, CardTypeEnum.Unknown);
             }
 
-            var number = card.Number.Replace("-", "");
+            card.Number = card.Number.Replace("-", "");
             ResultType result = ResultType.Invalid;
-            CardTypeEnum cardType = ValidateUtils.GetCardType(number);
+            CardTypeEnum cardType = ValidateUtils.GetCardType(card.Number);
             if(cardType != CardTypeEnum.Unknown)
             {
                 ValidatorUnit validator = ValidatorFactory.GetValidator(cardType);
-                if (validator.Validate(number))
+                if (validator.Validate(card))
                 {
                     result = ResultType.Valid;
                 }
             }
 
-            bool exist = _repository.CheckCardNumberExist(number);
+            bool exist = _repository.CheckCardNumberExist(card.Number);
             if (!exist)
             {
                 result = ResultType.DoesNotExist;
