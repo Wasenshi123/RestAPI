@@ -1,4 +1,5 @@
-﻿using Wasenshi.CreditCard.BLL.Interfaces;
+﻿using System.Linq;
+using Wasenshi.CreditCard.BLL.Interfaces;
 using Wasenshi.CreditCard.DAL.Interfaces;
 using Wasenshi.CreditCard.Libs.Enums;
 using Wasenshi.CreditCard.Libs.Models;
@@ -58,15 +59,7 @@ namespace Wasenshi.CreditCard.BLL
 
         static bool IsDigitsOnly(string str)
         {
-            foreach (char c in str)
-            {
-                if(c == '-')
-                    continue;
-                if (c < '0' || c > '9')
-                    return false;
-            }
-
-            return true;
+            return str.All(c => char.IsDigit(c) || c == '-');
         }
     }
 }
