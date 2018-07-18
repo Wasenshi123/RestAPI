@@ -150,6 +150,7 @@ namespace Bll.Tests
 
             var result = _bll.ValidateCreditCard(_card);
 
+            //Expected to be Unknown because we check first if the number is legit (contain only numbers)
             Assert.AreEqual(CardTypeEnum.Unknown, result.CardType);
             Assert.AreEqual(ResultType.Invalid, result.Result);
 
