@@ -1,16 +1,34 @@
-﻿using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Wasenshi.CreditCard.WebAPI.Controllers;
+﻿using NUnit.Framework;
 
 namespace WebAPI.Tests.Controllers
 {
-    [TestClass]
-    public class CreditCardVAlidationControllerTest
+    [TestFixture]
+    public class CreditCardValidationControllerTest
     {
-        [TestMethod]
-        public void Index()
+
+
+        [SetUp]
+        public void Setup()
         {
             
+        }
+
+        [Test]
+        public void ValidateCardAction_Must_Return_200_With_ValidateResult_Valid()
+        {
+            
+        }
+
+        [Test]
+        public void ValidateCardAction_Must_Return_400_With_ValidateResult_Invalid()
+        {
+
+        }
+
+        [Test]
+        public void ValidateCardAction_Must_Return_404_With_ValidateResult_DoesNotExist()
+        {
+
         }
     }
 }
