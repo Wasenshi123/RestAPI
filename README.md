@@ -4,6 +4,7 @@ An example of C# projects solution for Web Rest API using EF technology
 ## Prerequisites
 - Need to open the .solution with administrative power in order to run successfully
 - Modify the connection string in web.config of WebAPI project to the correct sql database instance name on your machine
+- Execute the SQL Script file in folder 'DatabaseScripts' inside the solution folder to setup the database and stored procedure
 
 ## Testing
 ### Use swagger
