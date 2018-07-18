@@ -14,7 +14,9 @@ or
 ### Use POSTman or any RESTapi testing tool
 - POST method, url: /CreditCard/Validate
 - body : 
+```
 {
   "Number": "4123-4567-8012-3456-7",
   "ExpiryDate": "2018-07-18T16:30:11.830Z"
 }
+```
