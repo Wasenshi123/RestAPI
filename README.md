@@ -12,7 +12,8 @@ An example of C# projects solution for Web Rest API using EF technology
 - Then go to its url appending with 'swagger' (Example -> localhost:61766/swagger)
 or
 ### Use POSTman or any RESTapi testing tool
-- POST method, url: /CreditCard/Validate
+- method: POST
+- url: /CreditCard/Validate
 - body : 
 ```
 {
