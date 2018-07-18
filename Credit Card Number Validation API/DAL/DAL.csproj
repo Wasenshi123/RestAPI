@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreditCardDal.cs" />
-    <Compile Include="Interfaces\ICreditCardDal.cs" />
+    <Compile Include="Interfaces\ICreditCardRepository.cs" />
     <Compile Include="Models\Cards.cs" />
     <Compile Include="CreditCardContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

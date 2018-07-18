@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace WebAPI
+namespace Wasenshi.CreditCard.WebAPI
 {
     public class FilterConfig
     {

@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebAPI;
-using WebAPI.Controllers;
+using Wasenshi.CreditCard.WebAPI.Controllers;
 
 namespace WebAPI.Tests.Controllers
 {
@@ -11,15 +10,7 @@ namespace WebAPI.Tests.Controllers
         [TestMethod]
         public void Index()
         {
-            // Arrange
-            CreditCardValidationController controller = new CreditCardValidationController();
-
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual("Home Page", result.ViewBag.Title);
+            
         }
     }
 }

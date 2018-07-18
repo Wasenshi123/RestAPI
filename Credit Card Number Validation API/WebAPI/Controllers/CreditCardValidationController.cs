@@ -2,7 +2,7 @@
 using Wasenshi.CreditCard.BLL.Interfaces;
 using Wasenshi.CreditCard.Libs.Models;
 
-namespace WebAPI.Controllers
+namespace Wasenshi.CreditCard.WebAPI.Controllers
 {
     [RoutePrefix("CreditCard")]
     public class CreditCardValidationController : ApiController

@@ -6,11 +6,11 @@ namespace Wasenshi.CreditCard.BLL
 {
     public class CreditCardBll : ICreditCardBll
     {
-        private ICreditCardDal _dal;
+        private ICreditCardRepository _repository;
 
-        public CreditCardBll(ICreditCardDal creditCardDal)
+        public CreditCardBll(ICreditCardRepository creditCardRepository)
         {
-            _dal = creditCardDal;
+            _repository = creditCardRepository;
         }
 
         public ValidateResult ValidateCreditCard(Card card)

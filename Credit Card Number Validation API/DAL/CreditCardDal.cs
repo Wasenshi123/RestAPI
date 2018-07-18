@@ -4,7 +4,7 @@ using Wasenshi.CreditCard.DAL.Interfaces;
 
 namespace Wasenshi.CreditCard.DAL
 {
-    public class CreditCardDal : ICreditCardDal
+    public class CreditCardRepository : ICreditCardRepository
     {
         public bool CheckCardNumberExist(string cardNumber)
         {

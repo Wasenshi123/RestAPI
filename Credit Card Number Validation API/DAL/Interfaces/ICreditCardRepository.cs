@@ -1,6 +1,6 @@
 ﻿namespace Wasenshi.CreditCard.DAL.Interfaces
 {
-    public interface ICreditCardDal
+    public interface ICreditCardRepository
     {
         bool CheckCardNumberExist(string cardNumber);
     }

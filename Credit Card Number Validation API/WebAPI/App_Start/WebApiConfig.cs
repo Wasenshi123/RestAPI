@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Castle.Windsor;
 using System.Web.Http;
 
-namespace WebAPI
+namespace Wasenshi.CreditCard.WebAPI
 {
     public static class WebApiConfig
     {
