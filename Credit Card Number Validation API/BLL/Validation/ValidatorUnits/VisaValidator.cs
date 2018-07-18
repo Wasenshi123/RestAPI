@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Wasenshi.CreditCard.Libs.Models;
 
 namespace Wasenshi.CreditCard.BLL.Validation.ValidatorUnits
 {
     public class VisaValidator : ValidatorUnit
     {
+        protected override bool ValidateCard(Card card)
+        {
+            if (!DateTime.IsLeapYear(card.ExpiryDate.Year))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
