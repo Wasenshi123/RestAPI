@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using Wasenshi.CreditCard.BLL.Interfaces;
+﻿using Wasenshi.CreditCard.BLL.Interfaces;
+using Wasenshi.CreditCard.BLL.Validation;
 using Wasenshi.CreditCard.DAL.Interfaces;
 using Wasenshi.CreditCard.Libs.Enums;
 using Wasenshi.CreditCard.Libs.Models;
@@ -17,38 +17,24 @@ namespace Wasenshi.CreditCard.BLL
 
         public ValidateResult ValidateCreditCard(Card card)
         {
-            if (!IsDigitsOnly(card.Number))
+            if (!ValidateUtils.IsDigitOnly(card.Number))
             {
                 return ValidateResult.New(ResultType.Invalid, CardTypeEnum.Unknown);
             }
 
+            var number = card.Number.Replace("-", "");
             ResultType result = ResultType.Invalid;
-            CardTypeEnum cardType = CardTypeEnum.Unknown;
-            if (card.Number.StartsWith("4"))
+            CardTypeEnum cardType = ValidateUtils.GetCardType(number);
+            if(cardType != CardTypeEnum.Unknown)
             {
-                // Visa Card
-                cardType = CardTypeEnum.Visa;
-            }
-            else if (card.Number.StartsWith("5"))
-            {
-                // Master Card
-                cardType = CardTypeEnum.Master;;
-            }
-            else if (card.Number.StartsWith("3"))
-            {
-                if (card.Number.Length == 15)
+                ValidatorUnit validator = ValidatorFactory.GetValidator(cardType);
+                if (validator.Validate(number))
                 {
-                    // Amex Card
-                    cardType = CardTypeEnum.Amex;
-                }
-                else
-                {
-                    // JCB
-                    cardType = CardTypeEnum.JCB;
+                    result = ResultType.Valid;
                 }
             }
 
-            bool exist = _repository.CheckCardNumberExist(card.Number);
+            bool exist = _repository.CheckCardNumberExist(number);
             if (!exist)
             {
                 result = ResultType.DoesNotExist;
@@ -57,9 +43,6 @@ namespace Wasenshi.CreditCard.BLL
             return ValidateResult.New(result, cardType);
         }
 
-        static bool IsDigitsOnly(string str)
-        {
-            return str.All(c => char.IsDigit(c) || c == '-');
-        }
+        
     }
 }
