@@ -127,6 +127,10 @@
       <Project>{EA2F0E48-3610-46AE-A179-0AF9E4CCD417}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Libs\Libs.csproj">
+      <Project>{B79FD0B0-AAE3-4BEA-ACFA-EE259652569F}</Project>
+      <Name>Libs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebAPI\WebAPI.csproj">
       <Project>{13504A6B-2357-44BE-B174-789A2A1A8E70}</Project>
       <Name>WebAPI</Name>
